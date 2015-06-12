@@ -148,7 +148,7 @@ function mkdirs(dep) {
 
 function checkout(dep) {
     return function (callback) {
-        console.log(colors.green("Downloading"), colors.yellow(dep.name), "rev=" + dep.rev, "from", dep.COPath);
+        console.log(colors.green("Checking"), colors.yellow(dep.name), "rev=" + dep.rev, "from", dep.COPath);
         if (dep.latest) callback(null);
         else svn.checkout(dep.COPath, rootDir + "/" + dep.installDir, {
             revision: dep.rev
