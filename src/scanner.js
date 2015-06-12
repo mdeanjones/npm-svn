@@ -148,7 +148,7 @@ function mkdirs(dep) {
 
 function checkout(dep) {
     return function (callback) {
-        console.log(colors.green("Downloading"), dep.name, "rev=" + dep.rev, "from", dep.COPath);
+        console.log(colors.green("Downloading"), colors.yellow(dep.name), "rev=" + dep.rev, "from", dep.COPath);
         if (dep.latest) callback(null);
         else svn.checkout(dep.COPath, rootDir + "/" + dep.installDir, {
             revision: dep.rev
@@ -203,21 +203,21 @@ function npmInstall(dep) {
 function info(dep, cb) {
     return function (error) {
         if (error) {
-            console.log("Failed to install " + dep.name);
+            console.log(colors.red("Failed to install " + dep.name));
             errors.push(dep.name + " (" + error + ")");
         }
 
-        if (!error) console.log("\nInstalled " + dep.name + "@" + dep.tag + "|" + dep.rev, dep.installDir);
+        if (!error) console.log(colors.green("\nInstalled ") + colors.yellow(dep.name) + "@" + dep.tag + "|" + dep.rev, dep.installDir);
 
         if (0 === --numDeps) {
             if (errors.length) {
-                console.log("\nEncountered errors installing svn dependencies:");
+                console.log(colors.red("\nEncountered errors installing svn dependencies:"));
                 errors.forEach(function (err) {
-                    console.log(" * " + err);
+                    console.log(colors.red(" * " + err));
                 });
                 console.log("\n");
             } else {
-                console.log("\nFinished installing svn dependencies");
+                console.log(colors.green("\nFinished installing svn dependencies"));
             }
         }
         cb();
