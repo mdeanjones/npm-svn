@@ -18,6 +18,9 @@ Result of each module setup is cached in module directory.
 To clean cache - remove `node_modules/npm-svn/.cache` file
 
 ## Getting Started
+
+Make sure that you have ***svn command line tools***
+
 Install with `npm install --save npm-svn`
 
 ```javascript
