@@ -1,6 +1,6 @@
 {
   "name": "npm-svn",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "npm can work with svn dependencies",
   "author": "Eugene A. Molchanov",
   "license": "ISC",
