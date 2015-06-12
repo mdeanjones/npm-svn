@@ -51,14 +51,13 @@ function buildDepObj(str, deps) {
         out.name = str[1];
         out.tag = str[2];
         out.rev = "HEAD";
-        if (out.tag.toLowerCase() === "trunk") out.repo += "/tags/";
+        if (out.tag.toLowerCase() != "trunk") out.repo = out.repo + "/tags/";
     } else if (str.indexOf("@") > 0 && str.indexOf("|") > 0) {
         str = /^(.*)@(.*)\|(.*)$/.exec(str);
         out.name = str[1];
         out.tag = str[2];
         out.rev = str[3];
-        out.repo += "/tags/";
-        if (out.tag.toLowerCase() === "trunk") out.repo += "/tags/";
+        if (out.tag.toLowerCase() != "trunk") out.repo = out.repo + "/tags/";
     } else {
         out.name = str;
         out.tag = "trunk";
