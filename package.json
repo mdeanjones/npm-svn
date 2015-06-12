@@ -2,10 +2,11 @@
   "name": "npm-svn",
   "version": "0.0.0",
   "description": "npm can work with svn dependencies",
-  "main": "index.js",
-  "scripts": {
-    "install": "node scripts/install.js",
-    "uninstall": "node scripts/uninstall.js"
+  "author": "Eugene A. Molchanov",
+  "license": "ISC",
+  "homepage": "https://github.com/emolchanov/npm-svn",
+  "bugs": {
+    "url": "https://github.com/emolchanov/npm-svn/issues"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,10 @@
     "svn",
     "dependencies"
   ],
-  "author": "Eugene A. Molchanov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/emolchanov/npm-svn/issues"
+  "scripts": {
+    "install": "node scripts/install.js",
+    "uninstall": "node scripts/uninstall.js"
   },
-  "homepage": "https://github.com/emolchanov/npm-svn",
   "dependencies": {
     "async": "^1.2.1",
     "rimraf": "^2.4.0",
