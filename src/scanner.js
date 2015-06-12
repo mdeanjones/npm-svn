@@ -147,11 +147,11 @@ function mkdirs(dep) {
 
 function checkout(dep) {
     return function (callback) {
+        console.log("Installing ", dep.name + "@" + dep.tag, "from", dep.repo);
         if (dep.latest) callback(null);
         else svn.checkout(dep.COPath, rootDir + "/" + dep.installDir, {
             revision: dep.rev
         }, function (error, result) {
-            //console.log("CO", result);
             return callback(error ? result : null)
         })
     }
