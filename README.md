@@ -45,4 +45,5 @@ entries from your package.json.
 
 ## License
 Copyright (c) 2015 Eugene A. Molchanov
+
 Licensed under the ISC license.
