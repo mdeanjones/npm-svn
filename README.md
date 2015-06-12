@@ -1,5 +1,4 @@
 # npm-svn
-Allow to use svn dependencies in npm
 
 > Allow to install node modules from svn repos.
 
