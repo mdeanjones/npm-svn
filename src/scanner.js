@@ -147,7 +147,7 @@ function mkdirs(dep) {
 
 function checkout(dep) {
     return function (callback) {
-        console.log("Installing ", dep.name + "@" + dep.tag, "from", dep.repo);
+        console.log("Downloading", dep.name, "rev=" + dep.rev, "from", dep.COPath);
         if (dep.latest) callback(null);
         else svn.checkout(dep.COPath, rootDir + "/" + dep.installDir, {
             revision: dep.rev
@@ -206,19 +206,17 @@ function info(dep, cb) {
             errors.push(dep.name + " (" + error + ")");
         }
 
-        if (!error) console.log("\n" + dep.name + "@" + dep.tag + " rev=" + dep.rev, dep.installDir);
+        if (!error) console.log("\n Installed " + dep.name + "@" + dep.tag + "|" + dep.rev, dep.installDir);
 
         if (0 === --numDeps) {
             if (errors.length) {
-                console.log(" ");
-                console.log("Encountered errors installing svn dependencies:");
+                console.log("\nEncountered errors installing svn dependencies:");
                 errors.forEach(function (err) {
                     console.log(" * " + err);
                 });
-                console.log(" ");
+                console.log("\n");
             } else {
-                console.log(" ");
-                console.log("Finished installing svn dependencies");
+                console.log("\nFinished installing svn dependencies");
             }
         }
         cb();
