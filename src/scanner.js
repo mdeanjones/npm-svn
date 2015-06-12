@@ -11,7 +11,7 @@ var cp = require("child_process");
 var async = require("async");
 var rimraf = require("rimraf");
 var svn = require("svn-interface");
-var colors = require('colors');
+var colors = require('colors/safe');
 
 var cacheFile = __dirname + "/../.cache";
 var rootDir = __dirname + "/../../..";
@@ -148,7 +148,7 @@ function mkdirs(dep) {
 
 function checkout(dep) {
     return function (callback) {
-        console.log("Downloading".green, dep.name, "rev=" + dep.rev, "from", dep.COPath);
+        console.log(colors.green("Downloading"), dep.name, "rev=" + dep.rev, "from", dep.COPath);
         if (dep.latest) callback(null);
         else svn.checkout(dep.COPath, rootDir + "/" + dep.installDir, {
             revision: dep.rev
