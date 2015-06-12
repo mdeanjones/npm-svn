@@ -47,6 +47,10 @@ should happend automatically when you `npm uninstall npm-svn` and only be
 necessary if you manually uninstall the module by deleting the files and removing
 entries from your package.json.
 
+## TODO
+- svn tags paths config
+- tests
+
 ## License
 Copyright (c) 2015 Eugene A. Molchanov
 
