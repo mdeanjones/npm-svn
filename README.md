@@ -48,7 +48,7 @@ necessary if you manually uninstall the module by deleting the files and removin
 entries from your package.json.
 
 ## TODO
-- svn tags paths config
+- svn tags path config
 - tests
 
 ## License
