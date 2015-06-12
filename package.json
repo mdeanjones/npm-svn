@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "async": "^1.2.1",
+    "colors": "^1.1.0",
     "rimraf": "^2.4.0",
     "svn-interface": "^0.4.4"
   }
