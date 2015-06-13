@@ -48,8 +48,10 @@ necessary if you manually uninstall the module by deleting the files and removin
 entries from your package.json.
 
 ## TODO
+- refactoring
 - svn tags path config
 - tests
+- console tools
 
 ## License
 Copyright (c) 2015 Eugene A. Molchanov
