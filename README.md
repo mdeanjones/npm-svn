@@ -2,6 +2,8 @@
 
 > Allow to install node modules from svn repos.
 
+[![Dependency Status](https://david-dm.org/emolchanov/npm-svn.svg?style=flat-square)](https://david-dm.org/emolchanov/npm-svn)
+
 [![NPM](https://nodei.co/npm/npm-svn.png)](https://nodei.co/npm/npm-svn/)
 
 ### WARNING
