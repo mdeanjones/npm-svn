@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>npm-svn by emolchanov</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>npm-svn</h1>
+          <h2>Allow to use svn dependencies in npm</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/emolchanov/npm-svn/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/emolchanov/npm-svn/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/emolchanov/npm-svn" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="npm-svn" class="anchor" href="#npm-svn" aria-hidden="true"><span class="octicon octicon-link"></span></a>npm-svn</h1>
+
+<blockquote>
+<p>Allow to install node modules from svn repos.</p>
+</blockquote>
+
+<p><a href="https://david-dm.org/emolchanov/npm-svn"><img src="https://david-dm.org/emolchanov/npm-svn.svg?style=flat-square" alt="Dependency Status"></a></p>
+
+<p><a href="https://nodei.co/npm/npm-svn/"><img src="https://nodei.co/npm/npm-svn.png" alt="NPM"></a></p>
+
+<h3>
+<a id="warning" class="anchor" href="#warning" aria-hidden="true"><span class="octicon octicon-link"></span></a>WARNING</h3>
+
+<p>Installing this module <strong>will</strong> make changes to your project's package.json
+file.</p>
+
+<p>Installing this module via <code>npm install</code> will add an install hook to your
+project's package.json. Once this hook is added any time your run <code>npm install</code>
+for your project npm-svn looks through your package.json file for an
+<code>svnDependencies</code> block where you can list your subversion stored node modules.</p>
+
+<p>Result of each module setup is cached in module directory. </p>
+
+<p>To clean cache - remove <code>node_modules/npm-svn/.cache</code> file</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>Make sure that you have <strong><em>svn command line tools</em></strong></p>
+
+<p>Install with <code>npm install --save npm-svn</code></p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">"</span>dependencies<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+  <span class="pl-s"><span class="pl-pds">"</span>npm-svn<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>latest<span class="pl-pds">"</span></span>
+}</pre></div>
+
+<p>After installing npm-svn you may use list dependencies from subversion
+repositories in your <code>package.json</code> under a "svnDependencies" key. e.g.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">"</span>svnDependencies<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>svn-module<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>svn://path/to/svn/repo<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>svn-module@tag<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>svn://path/to/svn/repo<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>svn-module@tag|revision<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>svn://path/to/svn/repo<span class="pl-pds">"</span></span>,
+}</pre></div>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>When uninstalling this module make sure the install hook has been removed. This
+should happend automatically when you <code>npm uninstall npm-svn</code> and only be
+necessary if you manually uninstall the module by deleting the files and removing
+entries from your package.json.</p>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>refactoring</li>
+<li>svn tags path config</li>
+<li>tests</li>
+<li>console tools</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2015 Eugene A. Molchanov</p>
+
+<p>Licensed under the ISC license.</p>
+        </section>
+
+        <footer>
+          npm-svn is maintained by <a href="https://github.com/emolchanov">emolchanov</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
