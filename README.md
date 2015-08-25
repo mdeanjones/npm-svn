@@ -4,7 +4,7 @@
 
 [![Dependency Status](https://david-dm.org/emolchanov/npm-svn.svg?style=flat-square)](https://david-dm.org/emolchanov/npm-svn)
 
-[![NPM](https://nodei.co/npm/npm-svn.png)](https://nodei.co/npm/npm-svn/)
+[![NPM](https://nodei.co/npm/npm-svn.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/npm-svn/)
 
 ### WARNING
 
