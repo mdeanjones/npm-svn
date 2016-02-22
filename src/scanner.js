@@ -59,7 +59,7 @@ function buildDepObj(str, deps) {
         out.tag = str[2];
         out.rev = str[3];
         if (out.tag.toLowerCase() != "trunk") out.repo = out.repo + "/tags/";
-    } else if(str.contains("/trunk/")) {
+    } else if(str.indexOf("/trunk/") > 0) {
         out.name = str;
         out.tag = "";
         out.rev = "HEAD";
