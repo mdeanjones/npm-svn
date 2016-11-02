@@ -65,7 +65,7 @@ function buildDepObj(str, deps) {
         out.rev = "HEAD";
     } else {
         out.name = str;
-        out.tag = "trunk";
+        out.tag = "";
         out.rev = "HEAD";
     }
     out.COPath = out.repo + "/" + out.tag;
