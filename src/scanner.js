@@ -13,6 +13,7 @@ var rimraf = require("rimraf");
 var svn = require("svn-interface");
 var colors = require('colors/safe');
 
+var svnArgs = require('./arguments')();
 var cacheFile = __dirname + "/../.cache";
 var rootDir = __dirname + "/../../..";
 var pkg = require(rootDir + "/package.json");
@@ -152,24 +153,39 @@ function mkdirs(dep) {
 
 function checkout(dep) {
     return function (callback) {
+        var args = svnArgs;
+        args.revision = dep.rev;
+
         console.log(colors.green("Checking"), colors.yellow(dep.name), "rev=" + dep.rev, "from", dep.COPath);
-        if (dep.latest) callback(null);
-        else svn.checkout(dep.COPath, rootDir + "/" + dep.installDir, {
-            revision: dep.rev
-        }, function (error, result) {
-            return callback(error ? result : null)
-        })
+
+        if (dep.latest) {
+            callback(null);
+        }
+        else {
+            svn.checkout(
+                dep.COPath, rootDir + "/" + dep.installDir,
+                args,
+                function (error, result) {
+                    return callback(error ? result : null)
+                }
+            )
+        }
     }
 }
 
 function update(dep) {
     return function (callback) {
-        return svn.update(rootDir + "/" + dep.installDir, {
-            revision: dep.rev
-        }, function (error, result) {
-            //console.log("UP", result);
-            return callback(error ? result : null)
-        })
+        var args = svnArgs;
+        args.revision = dep.rev;
+
+        return svn.update(
+            rootDir + "/" + dep.installDir,
+            args,
+            function (error, result) {
+                //console.log("UP", result);
+                return callback(error ? result : null)
+            }
+        )
     }
 }
 
