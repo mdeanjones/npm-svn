@@ -3,7 +3,12 @@
 
 'use strict';
 
-const getSvnArguments = function() {
+var getSvnArguments = function() {
+  var noArgs = ['no-auth-cache', 'non-interactive', 'trust-server-cert', 'auto-props', 'dry-run',
+    'force', 'force-log', 'ignore-ancestry', 'ignore-externals', 'incremental', 'keep-changelists',
+    'keep-local', 'no-auto-props', 'no-ignore', 'no-unlock', 'notice-ancestry', 'parents', 'quiet',
+    'record-only', 'recursive', 'reintegrate'];
+
   var env = process.env;
   var regex = /^(npm_config|npm_package_config)_npm_svn_([\w,_]+)$/i;
   var props = {};
@@ -17,7 +22,8 @@ const getSvnArguments = function() {
         var match = key.match(regex);
 
         if (match) {
-          props[match[2].replace(/_/g, '-')] = env[match[0]];
+          var name = match[2].replace(/_/g, '-');
+          props[name] = noArgs.indexOf(name) !== -1 ? true : env[match[0]];
         }
       }
     );
